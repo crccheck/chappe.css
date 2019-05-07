@@ -4,17 +4,12 @@ all: clean build
 
 clean:
 	rm -rf app.css
-	rm -rf app.js
 
+.PHONY: app.css
 build: app.css
 
-dev:
+dev: csswatch
 	@$(MAKE) -s -j _dev
-
-_dev: server csswatch
-
-server:
-	python -m SimpleHTTPServer $(PORT)
 
 app.css:
 	sass --compass --update --style compressed sass/app.sass:app.css
