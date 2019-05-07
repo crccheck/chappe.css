@@ -1,0 +1,138 @@
+@import "compass"
+
+@mixin debug
+  outline: 2px solid blue
+
+@mixin anim
+  +transition-property(transform)
+  +transition-duration(1s)
+
+@mixin test
+  +rotate(90deg)
+
+@mixin sign($cross, $left, $right)
+  .arms
+    +rotate($cross + 30deg)
+  .left
+    +rotate($left - 69deg)
+  .right
+    +rotate($right - 73deg)
+
+.sign
+  position: relative
+  margin: 0 auto
+  margin-top: 4em
+  width: 200px
+
+  img
+    display: block
+
+
+.house
+  width: 100%
+
+.arms
+  +anim
+  +transform-origin(46%, 50%)
+  position: absolute
+  top: 0
+  width: 100%
+
+.cross
+  left: 26%
+  position: absolute
+  top: -24px
+  width: 40%
+
+.left, .right
+  width: 20%
+  position: absolute
+
+.left
+  +anim
+  +transform-origin(87%, 88%)
+  top: -10px
+  left: 11%
+
+.right
+  +anim
+  +transform-origin(15%, 14%)
+  right: 20%
+  top: -24px
+
+.letter-A
+  +sign(0, 90deg, -90deg)
+
+.letter-B
+  +sign(45deg, 90deg, 180deg)
+
+.letter-C
+  +sign(90deg, 90deg, -90deg)
+
+.letter-D
+  +sign(135deg, 90deg, -90deg)
+
+.letter-E
+  +sign(0deg, -90deg, 90deg)
+
+.letter-F
+  +sign(45deg, -90deg, 90deg)
+
+.letter-G
+  +sign(270deg, 90deg, -90deg)
+
+.letter-H
+  +sign(315deg, 90deg, -90deg)
+
+.letter-I
+  +sign(0, -90deg, -90deg)
+
+// J
+
+.letter-K
+  +sign(45deg, -90deg, 180deg)
+
+.letter-L
+  +sign(90deg, -90deg, -90deg)
+
+.letter-M
+  +sign(-45deg, -180deg, -90deg)
+
+.letter-N
+  +sign(0, 90deg, 90deg)
+
+.letter-O
+  +sign(45deg, 90deg, 90deg)
+
+.letter-P
+  +sign(90deg, 90deg, 90deg)
+
+.letter-Q
+  +sign(-45deg, 90deg, 90deg)
+
+.letter-R
+  +sign(0deg, 90deg, -180deg)
+
+.letter-S
+  +sign(45deg, 90deg, -180deg)
+
+.letter-T
+  +sign(90deg, 90deg, -180deg)
+
+.letter-U
+  +sign(-45deg, 0deg, 90deg)
+
+.letter-V
+  +sign(0deg, -180deg, 90deg)
+
+.letter-W
+  +sign(45deg, -180deg, 90deg)
+
+.letter-X
+  +sign(90deg, 0deg, 90deg)
+
+.letter-Y
+  +sign(-45deg, 90deg, 0deg)
+
+.letter-Z
+  +sign(0, 0, -90deg)

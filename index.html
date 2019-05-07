@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chappe</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="reference">
+    <img src="images/telegraf.jpg" alt="">
+  </div>
+  <div class="sign">
+    <img class="house" src="images/main.png" alt="">
+    <div class="arms">
+      <img class="cross" src="images/arm.png" alt="">
+      <img class="left" src="images/leftarm.png" alt="">
+      <img class="right" src="images/rightarm.png" alt="">
+    </div>
+  </div>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script>
+    $(document.body).keydown(function(e) {
+      var letter = e.which;
+      if (letter >= 65 && letter <= 90) {
+        $('div.sign').attr('class', 'sign letter-' + String.fromCharCode(letter))
+      }
+    });
+  </script>
+</body>
+</html>
